@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -42,9 +42,26 @@ const Button = styled.button`
     outline: none;
   }
   background-color: ${props => (props.danger ? "#e74c3c" : "#2ecc71")};
+  ${props => {
+    if (props.danger) {
+      return css`
+        animation: ${rotation} 2s linear infinite;
+      `;
+    }
+  }}
 `;
 
 const Anchor = styled(Button.withComponent("a"))`
   text-decoration: none;
 `;
+
+const rotation = keyframes`
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+`;
+
 export default App;
