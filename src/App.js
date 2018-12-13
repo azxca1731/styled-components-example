@@ -1,12 +1,23 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    padding: 0;
+    margin: 0;
+  }
+`;
+
 class App extends Component {
   render() {
     return (
-      <Container>
-        <Button>Hello</Button>
-        <Button danger>Styled Component</Button>
-      </Container>
+      <React.Fragment>
+        <Container>
+          <Button>Hello</Button>
+          <Button danger>Styled Component</Button>
+        </Container>
+        <GlobalStyle />
+      </React.Fragment>
     );
   }
 }
