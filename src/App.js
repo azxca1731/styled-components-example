@@ -14,7 +14,9 @@ class App extends Component {
       <React.Fragment>
         <Container>
           <Button>Hello</Button>
-          <Button danger>Styled Component</Button>
+          <Button danger rotationTime={0.1}>
+            Styled Component
+          </Button>
           <Anchor href="https://www.naver.com">naver</Anchor>
         </Container>
         <GlobalStyle />
@@ -45,7 +47,7 @@ const Button = styled.button`
   ${props => {
     if (props.danger) {
       return css`
-        animation: ${rotation} 2s linear infinite;
+        animation: ${rotation} ${props.rotationTime}s linear infinite;
       `;
     }
   }}
