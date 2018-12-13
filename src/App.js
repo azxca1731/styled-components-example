@@ -15,6 +15,7 @@ class App extends Component {
         <Container>
           <Button>Hello</Button>
           <Button danger>Styled Component</Button>
+          <Anchor href="https://www.naver.com">naver</Anchor>
         </Container>
         <GlobalStyle />
       </React.Fragment>
@@ -43,4 +44,7 @@ const Button = styled.button`
   background-color: ${props => (props.danger ? "#e74c3c" : "#2ecc71")};
 `;
 
+const Anchor = styled(Button.withComponent("a"))`
+  text-decoration: none;
+`;
 export default App;
